@@ -1,14 +1,19 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-fun main() {
-    val name = "Kotlin"
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    println("Hello, " + name + "!")
+fun main(){
+    var salir = false
 
-    for (i in 1..5) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        println("i = $i")
+    while (!salir){
+        val juego = Juego()
+        juego.iniciar()
+        println("¿Desea jugar otra partida? (S/N) ")
+        val decision = readln().uppercase()
+
+        if (decision == "S"){
+            println("Iniciando partida...")
+        } else if (decision == "N"){
+            println("¡Gracias por jugar!")
+            salir = true
+        } else {
+            println("Opción inválida, comenzando otra partida...")
+        }
     }
 }
